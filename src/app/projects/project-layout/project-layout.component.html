@@ -1,0 +1,42 @@
+<mat-sidenav-container fullscreen>    
+    <mat-sidenav #sidenav mode="side" [ngStyle]="{ width: '250px' }">
+        
+        <mat-toolbar class="flex justify-content-between">
+
+            <span>Menú</span>
+
+            <button class="flex-initial justify-content-center p-0" mat-button (click)="sidenav.toggle()">
+                <mat-icon class="m-auto">close</mat-icon>
+            </button>
+
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <mat-list-item 
+                *ngFor="let item of projects"
+                routerLink="/projects"
+                (click)="sidenav.toggle()"
+            > 
+                <div class="flex gap-3">
+                    <mat-icon>add</mat-icon> 
+                    {{ item }}
+                </div>
+            </mat-list-item>
+        </mat-nav-list>
+    
+    </mat-sidenav>
+
+    <mat-toolbar class="surface-ground">
+        <button mat-button (click)="sidenav.toggle()">
+            <mat-icon class="m-auto">menu</mat-icon>
+        </button>
+        <span class="pl-3">Fusepong</span>
+    </mat-toolbar>
+
+    <div class="pl-4 pr-4 md:pl-8 md:pr-8 pt-3">
+
+        <router-outlet />
+
+    </div>
+
+</mat-sidenav-container>

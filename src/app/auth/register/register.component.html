@@ -1,0 +1,33 @@
+
+<div class="flex flex-column justify-content-between overflow-hidden">
+
+    <mat-form-field class="w-full flex align-items-center">
+        <mat-label>Nombre</mat-label>
+        <input type="name" matInput placeholder="Nombre" value="">
+    </mat-form-field>
+
+    <mat-form-field class="w-full flex align-items-center">
+        <mat-label>Correo</mat-label>
+        <input type="email" matInput placeholder="Correo" value="">
+    </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Compañía</mat-label>
+    <mat-select >
+        <mat-option *ngFor="let company of companies$ | async" [value]="company">{{company}}</mat-option>
+    </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="w-full m-auto">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput placeholder="Contraseña" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full m-auto">
+        <mat-label>Confirmar contraseña</mat-label>
+        <input type="confirm-password" matInput placeholder="Contraseña" />
+    </mat-form-field>
+
+</div>
+
+<button mat-button class="overflow-hidden btn p-4">Register</button>

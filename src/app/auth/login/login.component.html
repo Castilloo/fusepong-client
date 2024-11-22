@@ -1,0 +1,16 @@
+<div class="flex flex-column justify-content-between overflow-hidden" style="height: 200px;">
+    <mat-form-field class="w-full flex align-items-center">
+        <mat-label>Correo</mat-label>
+        <input type="email" matInput placeholder="Correo" name="email" value="" [(ngModel)]="email" required>
+    </mat-form-field>
+
+    <mat-form-field class="w-full m-auto">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput placeholder="Contraseña" name="password" [(ngModel)]="password" required/>
+    </mat-form-field>
+
+</div>
+
+<div *ngIf="error" class="error-message" style="color: red;">{{ error }}</div>
+
+<button mat-button class="overflow-hidden btn p-4" (click)="login()">Login</button>
